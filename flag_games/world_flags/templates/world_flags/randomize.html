@@ -1,0 +1,38 @@
+{% include "flag_games\base.html" %}
+{% load static %}
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <h1 style = "display: block;">Guess The Country </h1>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col text-center">
+            <img class="img-thumbnail center" src="https://flagcdn.com/256x192/{{target_country_code}}.png" width="256" height="192">
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col text-center">
+            <p>
+                {% for country_name in country_names %}
+                    <button type="button" class="btn btn-light" value="{{country_name}}">{{country_name}}</button>
+                {% endfor %}
+            </p>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col text-center">
+            <a class="btn btn-primary" href="{% url 'world_randomize'%}" role="button">New Country</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+<script>
+   var json_ctx = {{json_ctx | safe}};
+</script>
+
+<script src="{% static 'js/scripts.js' %}"></script>
+<link rel="stylesheet" type='text/css' href="{% static 'css/main.css' %}">
+

@@ -1,0 +1,36 @@
+{% extends "flag_games\base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col text-center">
+            <h1 style = "display: block;">Guess The State </h1>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col text-center">
+            <img class="img-thumbnail center" src="https://flagcdn.com/256x192/{{state_code}}.png" width="256" height="192">
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col text-center">
+            <p>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                    Reveal State
+                </button>
+            </p>
+            <div class="collapse" id="collapseExample">
+                <div class="card card-body">
+                    {{state_name}}
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col text-center">
+        <a class="btn btn-primary" href="{% url 'state_randomize'%}" role="button">New State</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
