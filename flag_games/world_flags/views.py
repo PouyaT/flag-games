@@ -1,13 +1,11 @@
 import random
-from django.template import loader
 from django.shortcuts import render
-from django.http import HttpResponse
 import pycountry
 import json
 
 
 def index(request):
-    return render(request, 'world_flags/index.html')
+    return render(request, 'flag_games/index.html')
 
 
 def randomize(request):
