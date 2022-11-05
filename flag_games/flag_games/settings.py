@@ -24,13 +24,13 @@ SECRET_KEY = 'django-insecure-oig&*#xpiuprdymghn0ua1u2vim$1c)v8rs$dax^btm+(o9#s#
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
+ADMIN_ENABLED = False
 
 ALLOWED_HOSTS = []
 
 # Application definition
 INSTALLED_APPS = [
     'world_flags.apps.WorldFlagsConfig',
-    'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
