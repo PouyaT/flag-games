@@ -29,7 +29,6 @@ ALLOWED_HOSTS = []
 
 # Application definition
 INSTALLED_APPS = [
-    'us_state_flags.apps.UsStateFlagsConfig',
     'world_flags.apps.WorldFlagsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
