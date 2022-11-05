@@ -19,7 +19,7 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('us_state_flags/', include('us_state_flags.urls')),
+    # path('us_state_flags/', include('us_state_flags.urls')),
     path('world_flags/', include('world_flags.urls')),
     path('admin/', admin.site.urls),
 ]
