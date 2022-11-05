@@ -12,6 +12,11 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 import os
+from dotenv import load_dotenv
+
+# get secret keys safely because it's import or something
+load_dotenv()
+my_secret_key = os.getenv("SECRET_KEY")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -20,7 +25,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-oig&*#xpiuprdymghn0ua1u2vim$1c)v8rs$dax^btm+(o9#s#'
+SECRET_KEY = my_secret_key
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False

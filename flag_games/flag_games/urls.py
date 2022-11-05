@@ -17,6 +17,6 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('admin', views.index, name='index'),
+    path('', views.index, name='index'),
     path('world_flags/', include('world_flags.urls')),
 ]
