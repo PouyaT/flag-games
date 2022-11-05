@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-oig&*#xpiuprdymghn0ua1u2vim$1c)v8rs$dax^btm+(o9#s#
 DEBUG = True
 ADMIN_ENABLED = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['PTavakoli.pythonanywhere.com', '127.0.0.1']
 
 # Application definition
 INSTALLED_APPS = [
@@ -121,3 +121,9 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+
+try:
+    from .local_settings import *
+except ImportError:
+    pass
