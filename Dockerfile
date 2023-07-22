@@ -2,6 +2,8 @@ FROM python:3.11
 # setup env variables
 ENV PYTHONBUFFERED=1
 ENV DockerHOME=/app/django-app
+# Expose port
+EXPOSE 8000
 # create work dir
 RUN mkdir -p $DockerHOME
 # set work dir
@@ -16,5 +18,4 @@ WORKDIR $DockerHOME/flag_games
 ENTRYPOINT ["python"]
 # run commands for app to run
 CMD ["manage.py", "collectstatic", "--noinput"]
-CMD ["manage.py", "runserver", "0.0.0.0:8000"]
-
+CMD ["manage.py", "runserver", "localhost:8000"]

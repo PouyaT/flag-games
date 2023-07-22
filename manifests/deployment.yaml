@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: flag-game-deployment
+  namespace: pouya
+  labels:
+    app: flag-game-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: flag-game-deployment
+  template:
+    metadata:
+      labels:
+        app: flag-game-deployment
+    spec:
+      containers:
+      - image: docker-django
+        imagePullPolicy: Never
+        name: docker-django
+        livenessProbe:
+          httpGet:
+            path: /health/
+            port: 8000
+            scheme: HTTP
+          initialDelaySeconds: 5
+          periodSeconds: 10
+          failureThreshold: 10

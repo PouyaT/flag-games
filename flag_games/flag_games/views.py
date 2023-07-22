@@ -12,6 +12,6 @@ def health_check(request):
 
     # Return a JSON response with the health status
     if is_healthy:
-        return JsonResponse({'status': 'ok'})
+        return JsonResponse({'status': 'ok'}, status=200)
     else:
         return JsonResponse({'status': 'error'}, status=503)

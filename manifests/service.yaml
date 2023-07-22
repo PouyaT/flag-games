@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: Service
+metadata:
+  labels:
+    app: flag-game-deployment
+  name: flag-game-deployment
+  namespace: pouya
+spec:
+  ports:
+  - nodePort: 32466
+    port: 8000
+    protocol: TCP
+    targetPort: 8000
+  selector:
+    app: flag-game-deployment
+  type: NodePort
+status:
+  loadBalancer: {}

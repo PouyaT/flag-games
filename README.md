@@ -8,3 +8,14 @@ CD into `flag-games/flag_games` dir then run `python manage.py runserver` to run
 
 # Example of game
 http://ptavakoli.pythonanywhere.com/
+
+
+# Run locally in kuberentes cluster
+# Pre-Reqs 
+- minikube
+- docker
+
+# Run locally
+1. Run the command `make minikube-deploy`
+2. Then run`kubectl port-forward services/flag-game-deployment -n pouya 8080:8000`
+3. Go to this url `127.0.0.1:8080`

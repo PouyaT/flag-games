@@ -31,7 +31,7 @@ SECRET_KEY = str(my_secret_key)
 DEBUG = False
 ADMIN_ENABLED = False
 
-ALLOWED_HOSTS = ['PTavakoli.pythonanywhere.com', '127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0']
 
 # Application definition
 INSTALLED_APPS = [
