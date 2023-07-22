@@ -28,4 +28,3 @@ minikube-deploy:
 	kubectl apply -f "$(PWD)\manifests\service.yaml"
 	kubectl apply -f "$(PWD)\manifests\deployment.yaml"
 
-

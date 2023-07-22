@@ -4,7 +4,7 @@ metadata:
   labels:
     app: flag-game-deployment
   name: flag-game-deployment
-  namespace: pouya
+  namespace: django
 spec:
   ports:
   - nodePort: 32466
