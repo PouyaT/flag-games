@@ -17,6 +17,8 @@ http://ptavakoli.pythonanywhere.com/
 - kubectl
 
 # Run locally
-1. Run the command `make minikube-deploy`
-2. Then run`kubectl port-forward services/flag-game-deployment -n django 8080:8000`
-3. Go to this url `127.0.0.1:8080`
+1. Make the files `flag_games/flag_games/.env` and `flag_games/flag_games/local_settings.py` exists
+   1. These files should exist in the same dir as `settings.py`
+2. Run the command `make minikube-deploy`
+3. Then run`kubectl port-forward services/flag-game-deployment -n django 8080:8000`
+4. Go to this url `127.0.0.1:8080`

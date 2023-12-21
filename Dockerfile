@@ -11,11 +11,12 @@ WORKDIR $DockerHOME
 # copy code to work dir
 COPY . $DockerHOME
 # install dependencies
-RUN pip install -r requirements.txt
+RUN pip install --upgrade pip && \
+    pip install -r requirements.txt
 # move working dir to where manage.py is
 WORKDIR $DockerHOME/flag_games
 # set default command (I thinkk)
-ENTRYPOINT ["python"]
+#ENTRYPOINT ["python"]
 # run commands for app to run
-CMD ["manage.py", "collectstatic", "--noinput"]
-CMD ["manage.py", "runserver", "localhost:8000"]
+RUN python manage.py collectstatic --noinput
+CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
