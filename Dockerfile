@@ -18,4 +18,3 @@ WORKDIR $DockerHOME/flag_games
 # run commands for app to run
 RUN python manage.py collectstatic --noinput
 CMD ["gunicorn", "--bind",  "0.0.0.0:8000", "flag_games.wsgi"]
-#CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
