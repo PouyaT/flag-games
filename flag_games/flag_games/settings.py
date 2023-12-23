@@ -30,7 +30,7 @@ SECRET_KEY = str(my_secret_key)
 # SECURITY WARNING: don't run with debug turned on in production!
 ADMIN_ENABLED = False
 
-ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', 'localhost']
+ALLOWED_HOSTS = ['127.0.0.1', '0.0.0.0', 'localhost', '*']
 
 # Application definition
 INSTALLED_APPS = [

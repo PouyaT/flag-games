@@ -1,9 +1,10 @@
 PWD = $(CURDIR)
-IMAGE_NAME = docker-django
+IMAGE_NAME = flag-game
 CONTAINER_NAME = flag-game
 VERSION=$(shell git rev-parse --short HEAD)
 KUBE_DEPLOYMENT_NAME = flag-game-deployment
-FULL_IMAGE_NAME = $(IMAGE_NAME):$(VERSION)
+DOCKER_USERNAME=pouyatav
+FULL_IMAGE_NAME = $(DOCKER_USERNAME)/$(IMAGE_NAME):$(VERSION)
 # create requirements.txt
 requirements:
 	pip freeze > "$(PWD)\requirements.txt"
@@ -21,6 +22,9 @@ docker-run:
 docker-destroy:
 	docker rm $(CONTAINER_NAME) -f
 
+# push docker image to private repo
+docker-push:
+	docker push $(FULL_IMAGE_NAME)
 # delete all docker images that start with `IMAGE_NAME` regardless of the tag
 docker-delete-all-images:
 	docker rmi $(shell docker images -q $(IMAGE_NAME):*)
