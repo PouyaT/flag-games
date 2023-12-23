@@ -1,8 +1,11 @@
+import logging
+
 from django.shortcuts import render
 from django.http import JsonResponse
 
 
 def index(request):
+    logging.info("in index request")
     return render(request, 'flag_games/index.html')
 
 
