@@ -1,3 +1,4 @@
+import logging
 import random
 from django.shortcuts import render
 import pycountry
@@ -5,10 +6,12 @@ import json
 
 
 def index(request):
+    logging.info("In world_flags index views")
     return render(request, 'flag_games/index.html')
 
 
 def randomize(request):
+    logging.info("In world_flags randomize views")
     num_choices = 4
     country_codes = []
     country_names = []

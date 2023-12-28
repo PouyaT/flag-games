@@ -27,7 +27,7 @@ docker-push:
 	docker push $(FULL_IMAGE_NAME)
 # delete all docker images that start with `IMAGE_NAME` regardless of the tag
 docker-delete-all-images:
-	docker rmi $(shell docker images -q $(IMAGE_NAME):*)
+	docker rmi $(shell docker images -q $(DOCKER_USERNAME)/$(IMAGE_NAME):*)
 
 # build a docker image, start up a (local) kubernetes cluster and deploy the imagee from the deployment.yaml file
 minikube-deploy:

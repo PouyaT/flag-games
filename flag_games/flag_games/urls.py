@@ -19,5 +19,5 @@ from . import views
 urlpatterns = [
     path('', views.index, name='index'),
     path('world_flags/', include('world_flags.urls')),
-    path('health', views.health_check),
+    path('health/', views.health_check),
 ]
