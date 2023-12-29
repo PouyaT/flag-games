@@ -23,7 +23,6 @@ if env_file:
 # get secret keys safely because it's import or something
 SECRET_KEY = os.getenv("SECRET_KEY")
 DEBUG = os.getenv("DEBUG", "False") == "True"
-FIND = os.getenv("FIND", "NO")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent

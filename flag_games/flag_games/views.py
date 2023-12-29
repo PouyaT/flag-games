@@ -1,5 +1,4 @@
 import logging
-from .settings import FIND
 
 from django.shortcuts import render
 from django.http import JsonResponse
@@ -7,7 +6,6 @@ from django.http import JsonResponse
 
 def index(request):
     logging.info("In root index views")
-    logging.warning(f"Does the .env file work? {FIND}")
     return render(request, 'flag_games/index.html')
 
 
