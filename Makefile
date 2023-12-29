@@ -7,7 +7,7 @@ DOCKER_USERNAME=pouyatav
 FULL_IMAGE_NAME = $(DOCKER_USERNAME)/$(IMAGE_NAME):$(VERSION)
 # create requirements.txt
 requirements:
-	pip freeze > "$(PWD)\requirements.txt"
+	pip freeze > "$(PWD)/requirements.txt"
 
 # build a docker image and remove all unused image
 docker-build:
@@ -16,7 +16,7 @@ docker-build:
 
 # run a docker container
 docker-run:
-	 docker run -d -p 8000:8000 --name $(CONTAINER_NAME) $(FULL_IMAGE_NAME)
+	 docker run --env-file "$(PWD)/.env" -d -p 8000:8000 --name $(CONTAINER_NAME) $(FULL_IMAGE_NAME)
 
 # destroy the docker container
 docker-destroy:
