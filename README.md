@@ -19,10 +19,10 @@ http://ptavakoli.pythonanywhere.com/
 2. Have Docker Desktop open 
 3. Run `make docker-build`
 4. Then run`make docker-run`
-5. Go to this url `127.0.0.1:8080`
+5. Go to this url `127.0.0.1:8000`
 
-TODO Test these steps
 # Run locally in kuberentes cluster
+TODO Test these steps
 1. Make sure the files `flag_games/.env`
 2. Run the command `make minikube-deploy`
 3. Then run`kubectl port-forward services/flag-game-deployment -n django 8080:8000`
