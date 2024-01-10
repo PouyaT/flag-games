@@ -9,8 +9,6 @@ I am running python 3.10, but I'm sure any somewhat recent Python 3.x version wi
 # Example of game
 http://ptavakoli.pythonanywhere.com/
 
-
-# Run locally in kuberentes cluster
 # Pre-Reqs 
 - minikube
 - docker
@@ -22,3 +20,10 @@ http://ptavakoli.pythonanywhere.com/
 3. Run `make docker-build`
 4. Then run`make docker-run`
 5. Go to this url `127.0.0.1:8080`
+
+TODO Test these steps
+# Run locally in kuberentes cluster
+1. Make sure the files `flag_games/.env`
+2. Run the command `make minikube-deploy`
+3. Then run`kubectl port-forward services/flag-game-deployment -n django 8080:8000`
+4. Go to this url `127.0.0.1:8080`
