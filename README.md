@@ -16,9 +16,9 @@ http://ptavakoli.pythonanywhere.com/
 - docker
 - kubectl
 
-# Run locally
-1. Make sure the files `flag_games/flag_games/.env` and `flag_games/flag_games/local_settings.py` exists
-   1. These files should exist in the same dir as `settings.py`
-2. Run the command `make minikube-deploy`
-3. Then run`kubectl port-forward services/flag-game-deployment -n django 8080:8000`
-4. Go to this url `127.0.0.1:8080`
+# Run locally in a docker container
+1. Make sure the files `flag_games/.env`
+2. Have Docker Desktop open 
+3. Run `make docker-build`
+4. Then run`make docker-run`
+5. Go to this url `127.0.0.1:8080`
